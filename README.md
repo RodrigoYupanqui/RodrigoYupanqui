@@ -1,16 +1,24 @@
-## Hi there 👋
+<div align="center">
+<h1 align="center">Hi, I'm Rodrigo Yupanqui</a> 👋</h1>
+</div>
+<img src="https://imgur.com/a/coUAlWZ">
 
-<!--
-**RodrigoYupanqui/RodrigoYupanqui** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+[![YouTube Channel Subscribers](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat-square&logo=linkedin&link=https://www.linkedin.com/in/rodrigo-yupanqui/)
 
-Here are some ideas to get you started:
+## About me
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+⭐ Top Electronics Engineering Student (Top 5% Faculty, Top 10% Major)
+💡 Passionate about Energy Efficiency, Sustainable Energy Systems, and Predictive Maintenance
+🛠️ Proficient in Mechanical Design (Inventor, AutoCAD), Circuit Verification (Proteus, LTspice), and Programming (Python, C, ASM, MATLAB)
+⚙️ Hands-on experience with Embedded Systems & IoT (ESP32, Arduino, TM4C1294NCPDT)
+🧑‍🏫 Volunteered in Electronics Workshops, enhancing technical & communication skills
+📚 Advanced studies in Programming, Cloud Computing, Database Management, Circuit Verification, and AI
+
+### ⚙️ &nbsp;GitHub Analytics
+
+<p align="center">
+<a href="https://github.com/ArisGuimera">
+  <img height="180em" src="https://github-readme-stats-eight-theta.vercel.app/api?username=ArisGuimera&show_icons=true&theme=algolia&include_all_commits=true&count_private=true"/>
+  <img height="180em" src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=ArisGuimera&layout=compact&langs_count=8&theme=algolia"/>
+</a>
+</p>
