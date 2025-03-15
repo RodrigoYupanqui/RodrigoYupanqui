@@ -3,7 +3,7 @@
 </div>
 <img src="https://i.imgur.com/0JGAqYE.png">
 
-(https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat-square&logo=linkedin&link=https://www.linkedin.com/in/rodrigo-yupanqui/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/rodrigo-yupanqui/)
 
 ## About me
 
