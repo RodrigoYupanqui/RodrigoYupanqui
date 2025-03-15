@@ -1,7 +1,7 @@
 <div align="center">
 <h1 align="center">Hi, I'm Rodrigo Yupanqui</a> 👋</h1>
 </div>
-<img src="https://imgur.com/a/coUAlWZ">
+<img src="https://i.imgur.com/0JGAqYE.png">
 
 (https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat-square&logo=linkedin&link=https://www.linkedin.com/in/rodrigo-yupanqui/)
 
@@ -17,8 +17,8 @@
 ### ⚙️ &nbsp;GitHub Analytics
 
 <p align="center">
-<a href="https://github.com/ArisGuimera">
-  <img height="180em" src="https://github-readme-stats-eight-theta.vercel.app/api?username=ArisGuimera&show_icons=true&theme=algolia&include_all_commits=true&count_private=true"/>
-  <img height="180em" src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=ArisGuimera&layout=compact&langs_count=8&theme=algolia"/>
+<a href="https://github.com/RodrigoYupanqui">
+  <img height="180em" src="https://github-readme-stats-eight-theta.vercel.app/api?username=RodrigoYupanqui&show_icons=true&theme=algolia&include_all_commits=true&count_private=true"/>
+  <img height="180em" src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=RodrigoYupanqui&layout=compact&langs_count=8&theme=algolia"/>
 </a>
 </p>
