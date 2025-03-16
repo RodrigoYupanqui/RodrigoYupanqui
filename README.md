@@ -12,7 +12,7 @@
 - 🛠️ Proficient in Mechanical Design (Inventor, AutoCAD), Circuit Verification (Proteus, LTspice), and Programming (Python, C, ASM, MATLAB)
 - ⚙️ Hands-on experience with Embedded Systems & IoT (ESP32, Arduino, TM4C1294NCPDT)
 - 🧑‍🏫 Volunteered in Electronics Workshops, enhancing technical & communication skills
-- 📚 Advanced studies in Programming, Cloud Computing, Database Management, Circuit Verification, and AI
+- 📚 Knowledge in Programming, Cloud Computing, Database Management, Circuit Verification, and AI
 
 ### ⚙️ &nbsp;GitHub Analytics
 
