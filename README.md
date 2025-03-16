@@ -7,9 +7,9 @@
 
 ## About me
 
-- ⭐ Top Electronics Engineering Student (Top 5% Faculty, Top 10% Major)
-- 💡 Passionate about Energy Efficiency, Sustainable Energy Systems, and Predictive Maintenance
-- 🛠️ Proficient in Mechanical Design (Inventor, AutoCAD), Circuit Verification (Proteus, LTspice), and Programming (Python, C, ASM, MATLAB)
+- ⭐ Top Electronics Engineering Student (Top 5% EE Students, Top 10% Faculty)
+- 💡 Passionate about Energy Efficiency, Sustainable Energy Systems, and AI/ML
+- 🛠️ Proficient in Mechanical Design (Inventor, AutoCAD), Circuit Verification (Proteus, LTspice), and Programming (Python, C, C++, ASM, MATLAB)
 - ⚙️ Hands-on experience with Embedded Systems & IoT (ESP32, Arduino, TM4C1294NCPDT)
 - 🧑‍🏫 Volunteered in Electronics Workshops, enhancing technical & communication skills
 - 📚 Knowledge in Programming, Cloud Computing, Database Management, Circuit Verification, and AI
