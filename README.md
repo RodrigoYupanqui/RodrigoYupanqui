@@ -1,22 +1,30 @@
 <div align="center">
 
-<img src="./assets/banner-rodrigo.png" alt="Rodrigo Yupanqui profile banner" width="100%">
+<img
+  src="./assets/banner-rodrigo.png"
+  alt="Rodrigo Yupanqui — Embedded Systems and Hardware Design"
+  width="100%"
+>
 
-<h1>Hi, I'm Rodrigo Yupanqui 👋</h1>
-
-<h3>Electronics Engineering Student | Embedded Systems | Hardware & Firmware Design</h3>
-
-<p>
-I build intelligent electronic systems that connect hardware, firmware, sensors, data acquisition, and real-world engineering applications.
-</p>
+<br><br>
 
 <a href="https://www.linkedin.com/in/rodrigo-yupanqui/">
-  <img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
+  <img
+    src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"
+    alt="LinkedIn"
+  >
+</a>
+
+<a href="https://github.com/RodrigoYupanqui">
+  <img
+    src="https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github&logoColor=white"
+    alt="GitHub"
+  >
 </a>
 
 </div>
 
----
+<br>
 
 ## 👨‍💻 About Me
 
@@ -167,18 +175,29 @@ I am particularly interested in applying embedded electronics, industrial data, 
 
 <div align="center">
 
-<img height="170" src="https://github-readme-stats.vercel.app/api?username=RodrigoYupanqui&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&theme=algolia" alt="Rodrigo Yupanqui GitHub statistics">
+<a href="https://github.com/RodrigoYupanqui">
+  <img
+    height="170"
+    src="https://github-stats-extended.vercel.app/api?username=RodrigoYupanqui&show_icons=true&theme=algolia&hide_border=true"
+    alt="Rodrigo Yupanqui GitHub statistics"
+  >
+</a>
 
 </div>
 
 ---
 
+---
+
 <div align="center">
 
-### Let's build technology that connects electronics, intelligence, and real-world impact.
+<h3>Building embedded and intelligent electronic systems for real-world applications.</h3>
 
 <a href="https://www.linkedin.com/in/rodrigo-yupanqui/">
-  <img src="https://img.shields.io/badge/Connect%20with%20me%20on%20LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="Connect on LinkedIn">
+  <img
+    src="https://img.shields.io/badge/Let's%20Connect-LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"
+    alt="Connect with Rodrigo Yupanqui on LinkedIn"
+  >
 </a>
 
 </div>
