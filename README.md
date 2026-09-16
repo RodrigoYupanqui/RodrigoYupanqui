@@ -55,21 +55,6 @@ My contributions focused on **electronic hardware integration, embedded-system a
 
 ---
 
-### 📡 Industrial Embedded and Instrumentation Systems
-
-Development and integration of embedded electronic solutions for industrial and mining applications at **DIACSA**.
-
-Areas of work include:
-
-- Microcontroller-based firmware
-- LiDAR and inertial sensor integration
-- Industrial data acquisition
-- Electronic instrumentation
-- Communication between embedded modules
-- Hardware testing and system validation
-
----
-
 ### 🛰️ CubeSat Environmental Monitoring System
 
 Embedded system for environmental data acquisition and wireless telemetry using microcontrollers, sensors, and LoRa communication.
