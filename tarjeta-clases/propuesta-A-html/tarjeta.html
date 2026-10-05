@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="fonts/fonts.css" rel="stylesheet">
+<title>Tarjeta Clases</title>
+<style>
+  /*
+    Concepto: "Lámina de ingeniería".
+    Frente = papel milimetrado real (1 mm / 5 mm) con la curva de notas de un alumno,
+    escrita con el código que todo escolar peruano conoce: rojo = desaprobado, azul = aprobado.
+    Reverso = hoja limpia que cierra con el rótulo de un plano técnico (datos de contacto).
+
+    Tarjeta 90 x 55 mm + 3 mm de sangrado por lado (96 x 61 mm).
+    Datos pendientes marcados con .todo (punteado rojo solo en pantalla).
+  */
+  :root{
+    --paper:#F1F6EC;      /* papel de ingeniería */
+    --grid-1:#D5E6CD;     /* línea de 1 mm */
+    --grid-5:#A9CDA3;     /* línea de 5 mm */
+    --blue:#1C3FA0;       /* lapicero azul */
+    --red:#CF2338;        /* nota roja */
+    --graphite:#1B2430;   /* lápiz / tinta técnica */
+    --soft:#56606E;
+    --white:#FCFDFB;
+    --cond:'BarlowCondensed','Barlow Condensed','Liberation Sans Narrow',sans-serif;
+    --body:'Barlow','Liberation Sans',sans-serif;
+    --hand:'Kalam','Comic Neue',cursive;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#DCE1DA;color:var(--graphite);font-family:var(--body);
+       display:flex;flex-wrap:wrap;gap:12mm;justify-content:center;padding:12mm 4mm}
+  .card{width:96mm;height:61mm;position:relative;overflow:hidden;box-shadow:0 4mm 10mm rgba(27,36,48,.22)}
+  .card > svg{display:block;width:100%;height:100%}
+  .caption{font:500 8pt var(--body);color:var(--soft);text-align:center;margin-top:3mm}
+  .todo{outline:.25mm dashed var(--red);outline-offset:.4mm}
+  svg .todo-box{fill:none;stroke:var(--red);stroke-width:.2;stroke-dasharray:.8 .5}
+  @media print{
+    @page{size:96mm 61mm;margin:0}
+    body{background:none;padding:0;display:block}
+    .card{box-shadow:none;break-after:page}
+    .caption,.todo-box{display:none}
+    .todo{outline:none}
+  }
+
+  /* ---------- REVERSO ---------- */
+  .back{background:var(--white)}
+  .back .safe{position:absolute;inset:7mm;display:grid;grid-template-columns:1fr 22mm;
+              grid-template-rows:1fr auto;column-gap:4mm;row-gap:2.6mm}
+  .back h1{font:800 4.7mm/1 var(--cond);letter-spacing:-.01em}
+  .back .what{font:500 2.15mm/1.35 var(--body);color:var(--soft);margin-top:1.1mm;max-width:52mm}
+  .steps{list-style:none;margin-top:2.6mm;display:grid;gap:1.3mm}
+  .steps li{display:grid;grid-template-columns:4.2mm 1fr;align-items:baseline}
+  .steps .tick{font:700 3.4mm/1 var(--hand);color:var(--blue);transform:rotate(-6deg)}
+  .steps p{font:400 2.15mm/1.3 var(--body)}
+  .steps b{font:700 2.5mm var(--cond);letter-spacing:.01em;margin-right:.6mm}
+
+  .side{display:flex;flex-direction:column;justify-content:space-between;align-items:center}
+  .offer{position:relative;width:100%;text-align:center;padding:1.6mm 0 1.9mm}
+  .offer svg{position:absolute;inset:-1mm -1.4mm;width:calc(100% + 2.8mm);height:calc(100% + 2mm);overflow:visible}
+  .offer .k{font:700 2.3mm/1.05 var(--cond);letter-spacing:.01em}
+  .offer .v{font:700 4.1mm/1 var(--hand);color:var(--blue);margin-top:.5mm}
+  .offer .s{font:500 1.75mm/1.2 var(--body);color:var(--soft);margin-top:.3mm}
+  .qr{width:16.5mm;height:16.5mm;position:relative}
+  .qr img{width:100%;height:100%;display:block}
+  .qr-label{font:400 2.2mm/1 var(--hand);color:var(--blue);text-align:center;margin-top:.8mm}
+
+  /* Rótulo de plano: es la convención del dibujo técnico, por eso las etiquetas van en versalitas */
+  .rotulo{grid-column:1 / -1;display:grid;grid-template-columns:1.15fr 1.15fr 1fr 1fr;
+          border:.3mm solid var(--graphite)}
+  .rotulo > div{padding:.8mm 1.4mm 1mm;border-left:.15mm solid var(--graphite)}
+  .rotulo > div:first-child{border-left:0}
+  .rotulo small{display:block;font:600 1.45mm/1 var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--soft)}
+  .rotulo span{display:flex;align-items:center;gap:.7mm;font:700 2.65mm/1.1 var(--cond);margin-top:.5mm;white-space:nowrap}
+  .rotulo svg{width:2.4mm;height:2.4mm;flex:none}
+</style>
+</head>
+<body>
+
+<!-- ======================= FRENTE ======================= -->
+<div>
+<section class="card" aria-label="Frente">
+<svg viewBox="0 0 96 61" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="mm1" width="1" height="1" patternUnits="userSpaceOnUse" patternTransform="translate(3 3)">
+      <path d="M1 0V1H0" fill="none" stroke="var(--grid-1)" stroke-width=".06"/>
+    </pattern>
+    <pattern id="mm5" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="translate(3 3)">
+      <rect width="5" height="5" fill="url(#mm1)"/>
+      <path d="M5 0V5H0" fill="none" stroke="var(--grid-5)" stroke-width=".12"/>
+    </pattern>
+  </defs>
+  <rect width="96" height="61" fill="var(--paper)"/>
+  <!-- cuadrícula a sangre, alineada al corte (3 mm) -->
+  <rect width="96" height="61" fill="url(#mm5)"/>
+
+  <!-- ---------- gráfica: nota (0-20) vs semanas ---------- -->
+  <g font-family="var(--cond)" fill="var(--graphite)">
+    <!-- ejes -->
+    <path d="M53 11V46H88" fill="none" stroke="var(--graphite)" stroke-width=".3" stroke-linecap="round"/>
+    <path d="M52.2 12.2 53 11 53.8 12.2M86.8 45.2 88 46 86.8 46.8" fill="none" stroke="var(--graphite)" stroke-width=".3" stroke-linecap="round" stroke-linejoin="round"/>
+    <g font-size="1.9" font-weight="600" text-anchor="end">
+      <text x="52" y="46.6">0</text>
+      <text x="52" y="29.1">10</text>
+      <text x="52" y="11.6">20</text>
+    </g>
+    <path d="M52.4 28.5H53M52.4 11H53" stroke="var(--graphite)" stroke-width=".2"/>
+    <text x="54.2" y="12.6" font-size="2" font-weight="600" fill="var(--soft)">nota</text>
+    <text x="88" y="49.4" font-size="2" font-weight="600" fill="var(--soft)" text-anchor="end">semanas</text>
+
+    <!-- línea aprobatoria 10.5 -->
+    <path d="M53 27.6H88" stroke="var(--red)" stroke-width=".22" stroke-dasharray="1 .7" opacity=".85"/>
+    <text x="87.6" y="26.7" font-family="var(--hand)" font-size="2.3" fill="var(--red)" text-anchor="end">10.5 para aprobar</text>
+
+    <!-- tramo en rojo (desaprobado) y tramo en azul (aprobado): trazo a mano -->
+    <path d="M57.4 32 C59.2 31.3 60.4 30.9 61.8 30.25 C63.6 29.3 64.6 28.2 65.5 27.6"
+          fill="none" stroke="var(--red)" stroke-width=".42" stroke-linecap="round"/>
+    <path d="M65.5 27.6 C66.2 26.2 66.6 25.4 67.2 24.9 C70 22.8 72.6 22.2 75.6 21.3 C78.6 20.2 81.6 18.2 84.2 15.6"
+          fill="none" stroke="var(--blue)" stroke-width=".42" stroke-linecap="round"/>
+    <g fill="var(--red)"><circle cx="57.4" cy="32" r=".65"/><circle cx="61.8" cy="30.25" r=".65"/></g>
+    <g fill="var(--blue)"><circle cx="67.2" cy="24.9" r=".65"/><circle cx="75.6" cy="21.3" r=".65"/><circle cx="84.2" cy="15.6" r=".65"/></g>
+    <text x="55.2" y="36.6" font-family="var(--hand)" font-weight="700" font-size="3.4" fill="var(--red)">08</text>
+    <text x="81" y="13.4" font-family="var(--hand)" font-weight="700" font-size="3.8" fill="var(--blue)">17</text>
+    <!-- círculo de corrección alrededor del 17 -->
+    <path d="M80.4 10.6c1.6-1.6 5.6-1.3 6.4.8.9 2.4-1.6 4-4.1 3.9-2.5-.1-3.9-1.6-3.5-3.1.2-.8.8-1.3 1.6-1.6"
+          fill="none" stroke="var(--blue)" stroke-width=".25" stroke-linecap="round"/>
+  </g>
+
+  <!-- ---------- titular ---------- -->
+  <g fill="var(--graphite)">
+    <text x="8" y="17.2" font-family="var(--cond)" font-weight="800" font-size="8.2" letter-spacing="-.15">
+      De <tspan fill="var(--red)">08</tspan> a <tspan fill="var(--blue)">17</tspan>
+    </text>
+    <text x="8.2" y="22.6" font-family="var(--cond)" font-weight="600" font-size="3.7">no se llega con suerte.</text>
+    <text x="8" y="29.6" font-family="var(--hand)" font-weight="700" font-size="4.3" fill="var(--blue)"
+          transform="rotate(-4 8 29.6)">Se llega con un plan.</text>
+    <path d="M9 31.6c7-1.2 18-2.3 29.6-2.6" fill="none" stroke="var(--blue)" stroke-width=".3" stroke-linecap="round" transform="rotate(-4 8 29.6)"/>
+  </g>
+
+  <!-- ---------- firma ---------- -->
+  <g fill="var(--graphite)">
+    <text x="8" y="49.4" font-family="var(--cond)" font-weight="800" font-size="4.4" letter-spacing=".05">TU MARCA</text>
+    <rect class="todo-box" x="7.4" y="45.6" width="21.4" height="4.6"/>
+    <text x="8" y="53.6" font-family="var(--body)" font-weight="500" font-size="2.15" fill="var(--soft)">Profesores de Ingeniería PUCP</text>
+    <text x="88" y="53.6" font-family="var(--body)" font-weight="500" font-size="2.15" fill="var(--soft)" text-anchor="end">Matemática, Física y Química</text>
+  </g>
+</svg>
+</section>
+<p class="caption">Frente</p>
+</div>
+
+<!-- ======================= REVERSO ======================= -->
+<div>
+<section class="card back" aria-label="Reverso">
+  <div class="safe">
+    <div>
+      <h1>Clases particulares y grupales</h1>
+      <p class="what todo">Matemática, Física, Química y cursos de Ingeniería para colegio, preuniversitario y universidad.</p>
+      <ol class="steps">
+        <li><span class="tick">✓</span><p><b>Diagnóstico.</b>Ubicamos el tema exacto donde te trabas.</p></li>
+        <li><span class="tick">✓</span><p><b>Plan semanal.</b>Metas claras hasta el día de tu examen.</p></li>
+        <li><span class="tick">✓</span><p><b>Seguimiento.</b>Reporte de avance para ti y tus papás.</p></li>
+      </ol>
+    </div>
+
+    <div class="side">
+      <div class="offer todo">
+        <svg viewBox="0 0 100 60" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M8 14C26 2 78 2 93 14c9 8 5 30-14 37-20 7-58 6-72-6C-3 36-1 21 10 12"
+                fill="none" stroke="var(--blue)" stroke-width="1.1" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+        </svg>
+        <div class="k">Con plan mensual</div>
+        <div class="v">hasta −20%</div>
+        <div class="s">en cada clase</div>
+      </div>
+      <div>
+        <div class="qr todo"><img src="qr-whatsapp.svg" alt="QR a WhatsApp"></div>
+        <div class="qr-label">escanea y escríbenos</div>
+      </div>
+    </div>
+
+    <div class="rotulo">
+      <div class="todo"><small>WhatsApp</small><span>
+        <svg viewBox="0 0 24 24" fill="#1FA855"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2s-1 .2-3.4-.7a11.8 11.8 0 0 1-4.6-4.1c-.4-.6-.9-1.6-.9-2.6s.5-1.6.8-1.9c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6a8.5 8.5 0 0 0 1.6 2 7.7 7.7 0 0 0 2.3 1.4c.3.1.5.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.8.9c.3.1.5.2.5.3.1.1.1.6-.1 1.2z"/></svg>
+        9XX XXX XXX</span></div>
+      <div class="todo"><small>Instagram</small><span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="#B4307A" stroke-width="2.4"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#B4307A"/></svg>
+        @tu_usuario</span></div>
+      <div class="todo"><small>Modalidad</small><span>Presencial o virtual</span></div>
+      <div class="todo"><small>Grupos</small><span>Máximo 4 alumnos</span></div>
+    </div>
+  </div>
+</section>
+<p class="caption">Reverso</p>
+</div>
+
+</body>
+</html>
