@@ -37,7 +37,7 @@
 
   /* ---------- D. FÓRMULA ---------- */
   .formula{background:var(--board);color:var(--chalk)}
-  .formula .eq{position:absolute;left:0;right:0;top:6mm;font:800 14mm/1 var(--cond);letter-spacing:-.3mm;white-space:nowrap}
+  .formula .eq{position:absolute;left:0;right:0;top:6mm;font:800 9.9mm/1 var(--cond);letter-spacing:-.3mm;white-space:nowrap}
   .formula .eq .op{color:#7FA796;font-weight:600}
   .formula .eq .v{color:var(--yellow)}
   .formula .note{position:absolute;left:0;top:22.5mm;font:700 3.2mm var(--hand);color:var(--yellow)}
@@ -50,7 +50,7 @@
   .steps3 div{font:400 2.2mm/1.3 var(--body);color:var(--soft)}
   .steps3 b{display:block;font:800 6mm/1 var(--cond);color:var(--yellow);-webkit-text-stroke:.15mm var(--board)}
   .steps3 strong{display:block;font:700 2.8mm var(--cond);color:var(--ink);margin:.4mm 0 .3mm}
-  .offerbar{display:flex;align-items:center;gap:3mm;margin-top:2mm;background:var(--board);color:var(--chalk);border-radius:1.2mm;padding:1.6mm 2.5mm;font:500 2.4mm var(--body)}
+  .offerbar{display:flex;align-items:center;gap:3mm;margin-top:1.6mm;background:var(--board);color:var(--chalk);border-radius:1.2mm;padding:1mm 2.5mm;font:500 2.4mm var(--body)}
   .offerbar big{font:800 5.4mm var(--cond);color:var(--yellow)}
 
   /* ---------- E. BLOQUES ---------- */
@@ -58,18 +58,18 @@
   .blocks .left{position:absolute;left:0;top:0;bottom:0;width:38mm;background:var(--yellow)}
   .blocks .delta{position:absolute;left:3mm;top:2mm;width:35mm;text-align:center;font:800 46mm/1 var(--cond);color:var(--board)}
   .blocks .right{position:absolute;left:44mm;right:7mm;top:9mm;bottom:7mm;display:flex;flex-direction:column;justify-content:space-between}
-  .blocks h2{font:800 7.8mm/0.98 var(--cond);letter-spacing:-.1mm}
+  .blocks h2{font:800 6.6mm/0.98 var(--cond);letter-spacing:-.1mm}
   .blocks h2 span{color:var(--yellow)}
   .blocks .tags{display:flex;flex-wrap:wrap;gap:1mm}
   .blocks .tags i{font:600 2.2mm var(--body);font-style:normal;border:.25mm solid rgba(255,255,255,.5);border-radius:3mm;padding:.4mm 1.6mm}
   .blocks .brand{color:var(--yellow);font-size:4.4mm}
   .blocks small{display:block;font:500 2.2mm var(--body);opacity:.85}
   .blocks-back{background:#fff}
-  .blocks-back .top{position:absolute;left:0;right:0;top:0;height:20mm;background:var(--yellow)}
+  .blocks-back .top{position:absolute;left:0;right:0;top:0;height:24.5mm;background:var(--yellow)}
   .blocks-back .offer{position:absolute;left:7mm;top:5.5mm;font:800 4.6mm/1.05 var(--cond);color:var(--board)}
-  .blocks-back .offer big{font-size:9mm}
+  .blocks-back .offer big{font-size:8mm}
   .blocks-back .qrwrap{position:absolute;right:7mm;top:4mm;background:#fff;padding:1.2mm;border-radius:1mm}
-  .blocks-back .list{position:absolute;left:7mm;right:7mm;top:26mm;display:grid;grid-template-columns:repeat(3,1fr);gap:2.5mm}
+  .blocks-back .list{position:absolute;left:7mm;right:7mm;top:28mm;display:grid;grid-template-columns:repeat(3,1fr);gap:2.5mm}
   .blocks-back .list div{font:400 2.2mm/1.3 var(--body);color:var(--soft)}
   .blocks-back .list strong{display:block;font:800 3mm var(--cond);color:var(--board)}
   .blocks-back .bottom{position:absolute;left:7mm;right:7mm;bottom:7mm}
@@ -109,49 +109,49 @@
 
 <!-- D frente -->
 <section class="card formula" id="d1"><div class="safe">
-  <div class="eq">tú <span class="op">+</span> método <span class="op">=</span> <span class="v">20</span></div>
-  <div class="note">↑ la nota más alta, con un plan para llegar</div>
-  <p class="what">Clases particulares y grupales de Matemática, Física y Química<br>Colegio, preuniversitario y universidad</p>
-  <div class="foot row"><span class="brand">TU MARCA</span><span style="font:500 2.4mm var(--body)">Profesores de Ingeniería PUCP</span></div>
+  <div class="eq">esfuerzo <span class="op">+</span> método <span class="op">=</span> <span class="v">20</span></div>
+  <div class="note">↑ la nota más alta. El método lo ponemos nosotros.</div>
+  <p class="what">Clases particulares y grupales para su hijo(a)<br>Secundaria · Preuniversitario · Universidad</p>
+  <div class="foot row"><span class="brand" style="font-size:5mm">Despeja</span><span style="font:500 2.2mm/1.3 var(--body);text-align:right">Profesores de Ingeniería de la<br><b>Pontificia Universidad Católica del Perú</b></span></div>
 </div></section>
 <!-- D reverso -->
 <section class="card formula-back" id="d2"><div class="safe">
   <div class="row" style="align-items:flex-start">
-    <div style="width:58mm">
-      <h3>El método, en tres pasos</h3>
+    <div style="width:60mm">
+      <h3>Su hijo(a), paso a paso</h3>
       <div class="steps3">
-        <div><b>1</b><strong>Diagnóstico</strong>Dónde te trabas exactamente.</div>
-        <div><b>2</b><strong>Plan semanal</strong>Metas claras hasta tu examen.</div>
-        <div><b>3</b><strong>Seguimiento</strong>Reporte de avance mensual.</div>
+        <div><b>1</b><strong>Diagnóstico</strong>Dónde se traba exactamente.</div>
+        <div><b>2</b><strong>Plan semanal</strong>Metas claras hasta su examen.</div>
+        <div><b>3</b><strong>Reporte a padres</strong>Cada mes usted ve su avance.</div>
       </div>
     </div>
-    <img class="qr" src="qr-whatsapp.svg" alt="" style="width:17mm;height:17mm">
+    <div style="text-align:center"><img class="qr" src="qr-whatsapp.svg" alt="" style="width:16mm;height:16mm"><div style="font:500 1.9mm var(--body);color:var(--soft);margin-top:.6mm">Escanee y escríbanos</div></div>
   </div>
-  <div class="offerbar"><big>−20%</big><span>por clase con el plan mensual · grupos de máximo 4</span></div>
-  <div class="row contact" style="position:absolute;left:0;right:0;bottom:0">
-    <span><span class="lbl">WhatsApp</span><b>9XX XXX XXX</b></span><span><span class="lbl">Instagram</span><b>@tu_usuario</b></span></div>
+  <div class="offerbar"><big>10%</big><span>de descuento con el plan mensual · facilidades de pago</span></div>
+  <p style="font:400 2.1mm/1.3 var(--body);color:var(--soft);margin-top:1.6mm"><b style="color:var(--board)">Cursos:</b> Álgebra, Aritmética, Geometría, Trigonometría, Física, Química, Cálculo y cursos de Ingeniería.</p>
+  <div class="row contact" style="position:absolute;left:0;right:0;bottom:0"><span><span class="lbl">WhatsApp</span><b>+51 961 956 660</b></span><span><span class="lbl">Instagram</span><b>@despeja.clases</b></span></div>
 </div></section>
 
 <!-- E frente -->
 <section class="card blocks" id="e1">
   <div class="left"></div><div class="delta">Δ</div>
   <div class="right">
-    <h2>Tu nota también<br>puede <span>cambiar.</span></h2>
-    <div class="tags"><i>Matemática</i><i>Física</i><i>Química</i></div>
-    <div><span class="brand" style="font:800 4.4mm var(--cond)">TU MARCA</span><small>Profesores de Ingeniería PUCP</small></div>
+    <h2>La nota de su hijo(a) también puede <span>cambiar.</span></h2>
+    <div class="tags"><i>Secundaria</i><i>Pre</i><i>Universidad</i></div>
+    <div><span class="brand" style="font:800 5mm var(--cond)">Despeja</span><small>Profesores de Ingeniería de la<br><b>Pontificia Universidad Católica del Perú</b></small></div>
   </div>
 </section>
 <!-- E reverso -->
 <section class="card blocks-back" id="e2">
   <div class="top"></div>
-  <div class="offer">Plan mensual<br><big>−20%</big> por clase</div>
+  <div class="offer">Plan mensual<br><big>10%</big> de descuento<div style="font:600 2.4mm var(--body);margin-top:.6mm">y facilidades de pago</div></div>
   <div class="qrwrap"><img class="qr" src="qr-whatsapp.svg" alt="" style="width:13mm;height:13mm"></div>
   <div class="list">
-    <div><strong>Diagnóstico</strong>Ubicamos dónde te trabas.</div>
-    <div><strong>Plan semanal</strong>Metas hasta tu examen.</div>
-    <div><strong>Seguimiento</strong>Reporte para ti y tus papás.</div>
+    <div><strong>Diagnóstico</strong>Ubicamos dónde se traba.</div>
+    <div><strong>Plan semanal</strong>Metas hasta su examen.</div>
+    <div><strong>Reporte a padres</strong>Cada mes, su avance.</div>
   </div>
-  <div style="position:absolute;left:7mm;right:7mm;top:39mm;font:600 2.4mm var(--body);color:var(--board)">Matemática, Física y Química para colegio, pre y universidad</div>
-  <div class="bottom row contact" style="border-top:.25mm solid #DDE3DF;padding-top:1.6mm"><span><span class="lbl">WhatsApp</span><b>9XX XXX XXX</b></span><span><span class="lbl">Instagram</span><b>@tu_usuario</b></span><span style="color:var(--red)">Máx. 4 por grupo</span></div>
+  <div style="position:absolute;left:7mm;right:7mm;top:38mm;font:400 2.2mm/1.35 var(--body);color:var(--soft)"><b style="color:var(--board)">Cursos:</b> Álgebra, Aritmética, Geometría, Trigonometría, Física, Química, Cálculo y cursos de Ingeniería.</div>
+  <div class="bottom row contact" style="border-top:.25mm solid #DDE3DF;padding-top:1.6mm"><span><span class="lbl">WhatsApp</span><b>+51 961 956 660</b></span><span><span class="lbl">Instagram</span><b>@despeja.clases</b></span><span style="color:var(--red)">Máx. 4 por grupo</span></div>
 </section>
 </body></html>
