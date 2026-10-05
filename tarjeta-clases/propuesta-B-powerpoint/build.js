@@ -54,15 +54,19 @@ const THEME = { name: 'Pizarra', headFontFace: 'Century Schoolbook', bodyFontFac
   const steps = [['1', 'Diagnóstico', 'ubicamos el tema exacto donde se traba.'], ['2', 'Plan semanal', 'metas claras hasta su examen.'], ['3', 'Reporte a los padres', 'cada mes usted sabe cómo avanza.']];
   const D = 4.4;
   steps.forEach(([n, k, d], i) => {
-    const y = 14 + i * 7.2;
+    const y = 13.6 + i * 6.5;
     b.addShape(pres.shapes.OVAL, { x: L * MM, y: y * MM, w: D * MM, h: D * MM, fill: { color: '23443A' }, line: { type: 'none' }, objectName: 'paso ' + n });
     T(b, n, { x: L * MM, y: y * MM, w: D * MM, h: D * MM, fontSize: 7, bold: true, color: 'F3D34A', align: 'center', valign: 'middle' });
     T(b, [{ text: k, options: { bold: true, color: '23443A', breakLine: true } }, { text: d, options: { color: '3B4A44' } }],
       { x: (L + 6.5) * MM, y: (y - 0.9) * MM, w: (62 - L - 6.5) * MM, h: 6.2 * MM, fontSize: 7, valign: 'middle' });
   });
-  T(b, [{ text: 'Cursos: ', options: { bold: true, color: '23443A' } },
-        { text: 'Álgebra, Aritmética, Geometría, Trigonometría, Física, Química, Cálculo y cursos de Ingeniería.', options: { color: '3B4A44' } }],
-    { x: L * MM, y: 36.4 * MM, w: (62 - L) * MM, h: 6 * MM, fontSize: 6, valign: 'top', objectName: 'cursos detalle' });
+  // cursos en dos viñetas: el punto es una forma para que etiqueta y texto queden en un solo párrafo
+  [[33.4, 'Secundaria y pre: ', 'Álgebra, Aritmética, Geometría, Trigonometría, Física y Química.'],
+   [38.6, 'Universidad: ', 'Cálculo, Física, Química y cursos de Ingeniería.']].forEach(([y, k, d]) => {
+    b.addShape(pres.shapes.OVAL, { x: (L + 0.3) * MM, y: (y + 0.9) * MM, w: 1.1 * MM, h: 1.1 * MM, fill: { color: 'F3D34A' }, line: { color: '23443A', width: 0.25 }, objectName: 'viñeta ' + k });
+    T(b, [{ text: k, options: { bold: true, color: '23443A' } }, { text: d, options: { color: '3B4A44' } }],
+      { x: (L + 2.6) * MM, y: y * MM, w: (62 - L - 2.6) * MM, h: 5 * MM, fontSize: 6, valign: 'top', objectName: 'cursos ' + k });
+  });
   // oferta: plan mensual
   b.addShape(pres.shapes.ROUNDED_RECTANGLE, { x: COL * MM, y: L * MM, w: COLW * MM, h: 15 * MM, rectRadius: 0.06, fill: { color: '23443A' }, line: { type: 'none' }, objectName: 'oferta' });
   T(b, [{ text: 'Plan mensual', options: { breakLine: true, fontSize: 6.5, color: 'F2F0E6' } },
