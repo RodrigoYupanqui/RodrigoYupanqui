@@ -56,9 +56,12 @@
   /* ---------- E. BLOQUES ---------- */
   .blocks{background:var(--board);color:#fff}
   .blocks .left{position:absolute;left:0;top:0;bottom:0;width:38mm;background:var(--yellow)}
-  .blocks .delta{position:absolute;left:3mm;top:2mm;width:35mm;text-align:center;font:800 46mm/1 var(--cond);color:var(--board)}
-  .blocks .right{position:absolute;left:44mm;right:7mm;top:9mm;bottom:7mm;display:flex;flex-direction:column;justify-content:space-between}
-  .blocks h2{font:800 6.6mm/0.98 var(--cond);letter-spacing:-.1mm}
+  .blocks .lockup{position:absolute;left:3mm;top:0;bottom:0;width:35mm;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--board)}
+  .blocks .lockup .delta{font:800 27mm/0.8 var(--cond)}
+  .blocks .lockup .name{font:800 10mm/1 var(--cond);letter-spacing:.2mm;margin-top:2.5mm}
+  .blocks .lockup .tagline{font:600 2.1mm var(--body);margin-top:.6mm;letter-spacing:.05mm}
+  .blocks .right{position:absolute;left:44mm;right:7mm;top:10mm;bottom:8mm;display:flex;flex-direction:column;justify-content:space-between}
+  .blocks h2{font:800 7mm/0.98 var(--cond);letter-spacing:-.1mm}
   .blocks h2 span{color:var(--yellow)}
   .blocks .tags{display:flex;flex-wrap:wrap;gap:1mm}
   .blocks .tags i{font:600 2.2mm var(--body);font-style:normal;border:.25mm solid rgba(255,255,255,.5);border-radius:3mm;padding:.4mm 1.6mm}
@@ -138,11 +141,17 @@
 
 <!-- E frente -->
 <section class="card blocks" id="e1">
-  <div class="left"></div><div class="delta">Δ</div>
+  <div class="left"></div>
+  <!-- la marca vive en el bloque amarillo: Δ + nombre forman un solo logotipo -->
+  <div class="lockup">
+    <div class="delta">Δ</div>
+    <div class="name">Despeja</div>
+    <div class="tagline">clases de números y ciencias</div>
+  </div>
   <div class="right">
     <h2>La nota de su hijo(a) también puede <span>cambiar.</span></h2>
     <div class="tags"><i>Secundaria</i><i>Pre</i><i>Universidad</i></div>
-    <div><span class="brand" style="font:800 5mm var(--cond)">Despeja</span><small>Profesores de Ingeniería de la<br><b>Pontificia Universidad Católica del Perú</b></small></div>
+    <small>Profesores de Ingeniería de la<br><b>Pontificia Universidad Católica del Perú</b></small>
   </div>
 </section>
 <!-- E reverso -->
