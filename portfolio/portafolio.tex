@@ -25,10 +25,12 @@
 
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{3.5pt}
-\captionsetup{font={footnotesize},labelfont=bf,skip=2pt,justification=justified,singlelinecheck=false}
+\setlength{\parskip}{4pt}
+\captionsetup{font={footnotesize},labelfont=bf,skip=2pt,justification=centering}
 \setlist{nosep,leftmargin=1.2em,itemsep=2pt}
-\renewcommand{\arraystretch}{1.15}
+\renewcommand{\arraystretch}{1.38}
+\setlength{\tabcolsep}{5pt}
+\arrayrulecolor{rulegray}
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 \newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
 
@@ -45,19 +47,30 @@
   \par\vspace{4pt}{\color{rulegray}\hrule height 0.4pt}\vspace{3pt}
   {\color{navy}\scshape\bfseries Contribución personal.} #1\par}
 
+% Figura con ancho relativo (fraccion de \linewidth), imagen y pie
+\newcommand{\figbox}[3]{\begin{minipage}[t]{#1\linewidth}\vspace{0pt}\centering\includegraphics[width=\linewidth]{#2}\captionof{figure}{#3}\end{minipage}}
+% Titulo de bloque pequeno (dentro de columnas)
+\newcommand{\blk}[1]{{\color{navy}\scshape\bfseries #1}\par\vspace{2pt}}
+\newcommand{\gap}{\par\vspace{10pt}\vfill}
+
 \begin{document}
 
 % =====================================================================
 %  PORTADA
 % =====================================================================
-{\color{navy}\scshape\large Portafolio de proyectos}\par\vspace{-2pt}
-{\color{navy}\fontsize{26}{30}\selectfont\bfseries Rodrigo Yupanqui Rubio}\par\vspace{2pt}
-{\large Ingeniería Electrónica --- Sistemas embebidos, IoT e instrumentación}\par\vspace{2pt}
-{\small Pontificia Universidad Católica del Perú (PUCP) \;\textbar\; Lima, Perú \;\textbar\;
-  \href{mailto:rodrigo.yupanqui@pucp.edu.pe}{rodrigo.yupanqui@pucp.edu.pe} \;\textbar\;
-  \href{https://www.linkedin.com/in/rodrigo-yupanqui/}{linkedin.com/in/rodrigo-yupanqui} \;\textbar\;
-  \href{https://github.com/RodrigoYupanqui}{github.com/RodrigoYupanqui}}\par
-{\color{navy}\hrule height 1pt}
+\begin{minipage}[b]{0.60\linewidth}
+{\color{navy}\scshape\small Portafolio de proyectos}\par\vspace{1pt}
+{\color{navy}\fontsize{25}{28}\selectfont\bfseries Rodrigo Yupanqui Rubio}\par\vspace{3pt}
+{\normalsize Ingeniería Electrónica\par Sistemas embebidos, IoT e instrumentación}
+\end{minipage}\hfill
+\begin{minipage}[b]{0.38\linewidth}\raggedleft\small
+Pontificia Universidad Católica del Perú\par
+Lima, Perú\par
+\href{mailto:rodrigo.yupanqui@pucp.edu.pe}{rodrigo.yupanqui@pucp.edu.pe}\par
+\href{https://www.linkedin.com/in/rodrigo-yupanqui/}{linkedin.com/in/rodrigo-yupanqui}\par
+\href{https://github.com/RodrigoYupanqui}{github.com/RodrigoYupanqui}
+\end{minipage}
+\par\vspace{3pt}{\color{navy}\hrule height 1pt}
 
 \sect{Perfil}
 Estudiante del décimo y último ciclo de Ingeniería Electrónica (PUCP), 2.º puesto de su promoción y perteneciente al décimo superior,
@@ -67,51 +80,63 @@ Aspire Leaders Program (Harvard Business School) y Seeds for the Future (Huawei)
 
 \sect{Resumen de proyectos}
 \small
-\begin{tabularx}{\linewidth}{@{}P{2.15cm}P{3.4cm}YY@{}}
-\toprule
-\textbf{Proyecto} & \textbf{Contexto} & \textbf{Sistema} & \textbf{Resultado}\\\midrule
+\begin{tabularx}{\linewidth}{|P{2.15cm}|P{3.4cm}|Y|Y|}
+\hline
+\rowcolor{navy!8}\textbf{Proyecto} & \textbf{Contexto} & \textbf{Sistema} & \textbf{Resultado}\\\hline
 CrackScan & Proyecto Electrónico 1, PUCP (2025-1) & Rover autónomo: ESP32, Raspberry Pi 4B/5, LiDAR, WSS & Paper en IEEE INTERCON 2026; final del Student Poster Competition, ICACIT 2026\\
+\hline
 CubeSat 1U & Competencia Nacional de Pequeños Satélites 2024 & ESP32, 6 sensores, telemetría LoRa a 433~MHz & Finalista entre 17 equipos; prueba de caída libre desde 100~m\\
+\hline
 Arpeggiator & Diseño Electrónico 2, PUCP (2024-2) & ESP32-S3, audio I\textsuperscript{2}S de 16 bits, PCB propia & Prototipo funcional con gabinete en MDF y revisión de código documentada\\
-\bottomrule
+\hline
 \end{tabularx}
 
 \sect{Competencias técnicas}
 \small
-\begin{tabularx}{\linewidth}{@{}>{\bfseries\raggedright\arraybackslash}p{3.9cm}Y@{}}
-\toprule
+\begin{tabularx}{\linewidth}{|>{\bfseries\raggedright\arraybackslash}p{3.9cm}|Y|}
+\hline
 Firmware y plataformas & C/C++ (Arduino-ESP32, STM32), Python; ESP32, ESP32-S3, STM32, Raspberry Pi 4B/5\\
+\hline
 Comunicaciones & LoRa, Wi-Fi, WebSocket seguro (WSS), MQTT, UART, I\textsuperscript{2}C, SPI, I\textsuperscript{2}S, RS485/Modbus RTU\\
+\hline
 Sensórica y adquisición & IMU, magnetómetro, GPS, BME280, INA219, LiDAR, cámaras, encoders\\
+\hline
 Control y procesamiento & Regulación PI con \emph{anti-windup}, filtrado digital, PWM; OpenCV, YOLO, MATLAB/Simulink, LabVIEW\\
+\hline
 Diseño de hardware & EasyEDA (esquemáticos, PCB, Gerber), LTspice, Proteus, Autodesk Inventor, AutoCAD Electrical\\
+\hline
 Software y datos & FastAPI, Next.js, Git/GitHub, Linux, SQL, Power BI, NumPy/Pandas\\
+\hline
 Automatización industrial & PLC Allen-Bradley (Ladder, Studio 5000), PLC Festo, SCADA/HMI\\
-\bottomrule
+\hline
 \end{tabularx}
 
 \sect{Experiencia}
 \small
-\newcommand{\entry}[3]{\par\vspace{2pt}{\bfseries #1}, {\itshape #2}\hfill{#3}\par\vspace{1pt}}
-\entry{DIACSA}{Practicante de Ingeniería Electrónica}{feb.\ 2026 -- presente}
-\begin{itemize}
-  \item Sistema de instrumentación LiDAR + STM32 para medir secciones transversales en socavones mineros.
-  \item Diseño de electrónica de potencia y de PCB en EasyEDA para prototipos de instrumentación.
-\end{itemize}
-\entry{Departamento de Ciencias, PUCP}{Jefe de práctica}{}
-\begin{itemize}
-  \item Sesiones de probabilidad y procesos estocásticos con MATLAB, Excel e IBM SPSS Statistics.
-\end{itemize}
-\entry{IEEE Computer Society PUCP}{Director de Proyectos}{}
+\begin{tabularx}{\linewidth}{|P{3.0cm}|P{3.4cm}|P{2.1cm}|Y|}
+\hline
+\rowcolor{navy!8}\textbf{Organización} & \textbf{Cargo} & \textbf{Periodo} & \textbf{Actividades}\\
+\hline
+DIACSA & Practicante de Ingeniería Electrónica & feb.\ 2026 -- presente & Sistema de instrumentación LiDAR + STM32 para secciones transversales en socavones mineros; electrónica de potencia y PCB en EasyEDA para prototipos de instrumentación.\\
+\hline
+Departamento de Ciencias, PUCP & Jefe de práctica & --- & Sesiones de probabilidad y procesos estocásticos con MATLAB, Excel e IBM SPSS Statistics.\\
+\hline
+IEEE Computer Society PUCP & Director de Proyectos & --- & ---\\
+\hline
+\end{tabularx}
 
 \sect{Publicaciones y distinciones}
 \small
-\begin{tabularx}{\linewidth}{@{}>{\bfseries}p{3.9cm}Y@{}}
-\toprule
+\begin{tabularx}{\linewidth}{|>{\bfseries\raggedright\arraybackslash}p{3.9cm}|Y|}
+\hline
+\rowcolor{navy!8}\textbf{Hito} & \textbf{Detalle}\\
+\hline
 IEEE INTERCON 2026 & Paper de CrackScan presentado en el congreso (Trujillo).\\
+\hline
 ICACIT 2026 & Proyecto CrackScan seleccionado para la final del Student Poster Competition -- Capstone Projects, 12th ICACIT Symposium (Pontificia Universidad Católica de Chile).\\
+\hline
 Competencia Nacional de Pequeños Satélites 2024 & Finalista entre 17 equipos con el CubeSat 1U.\\
-\bottomrule
+\hline
 \end{tabularx}
 \newpage
 
@@ -120,64 +145,64 @@ Competencia Nacional de Pequeños Satélites 2024 & Finalista entre 17 equipos c
 % =====================================================================
 \projecthead{1}{CrackScan: rover autónomo de inspección de pavimentos}
   {Proyecto Electrónico 1, PUCP (asesor: S.\,E.~Romero)}{2025-1}
+\vspace{4pt}
 
-\begin{minipage}[t]{0.555\linewidth}
+\begin{minipage}[t]{0.52\linewidth}
 \vspace{0pt}
-\sect{Resumen}
-CrackScan es un rover de bajo costo, construido con componentes comerciales, que detecta grietas y baches en el pavimento,
-reconstruye en 3D los baches detectados y navega siguiendo una línea amarilla. El sistema se organiza en tres nodos:
-una Raspberry Pi 5 ejecuta YOLOv11n y activa de forma selectiva el LiDAR LDROBOT D500 para estimar el volumen del bache;
-una Raspberry Pi 4B segmenta la línea (HSV, ROI trapezoidal, centroide ponderado) y envía un ángulo de corrección a unos 20~Hz;
-un ESP32 regula la velocidad de dos motores, coordina dos servos de dirección y mantiene la telemetría por WSS.
-
-\sect{Formulación técnica}
-El ESP32 muestrea los encoders cada $T_s=0.1$~s (1050 pulsos por vuelta) y aplica un controlador PI con saturación e integrador acotado ($K_p=1.8$, $K_i=3.2$):
-\begin{align}
-  \omega[k] &= \frac{600\,n_\mathrm{enc}[k]}{1050}, \qquad e[k]=\omega^{*}-\omega[k]\\
-  I[k] &= \operatorname{sat}_{[0,255]}\!\big(I[k-1]+K_i\,e[k]\,T_s\big)\\
-  u[k] &= \operatorname{sat}_{[0,255]}\!\big(K_p\,e[k]+I[k]\big)
-\end{align}
-El ángulo recibido por UART se limita a $\pm45^\circ$ y se filtra con una media móvil exponencial, con banda muerta de $1^\circ$ y servos restringidos a $60^\circ$--$120^\circ$:
-\begin{equation}
-  \theta_f[k]=(1-\alpha)\,\theta_f[k-1]+\alpha\,\theta[k],\qquad \alpha=0.25
-\end{equation}
-Si el enlace UART permanece inactivo más de 200~ms, la referencia de velocidad pasa a cero. El volumen del bache se obtiene
-con un plano de referencia estimado por RANSAC y el mapa de profundidad $d_{ij}$ sobre una rejilla regular: $V=\sum_{i,j} d_{ij}\,\Delta A_{ij}$.
-
-\sect{Resultados}
-\small
-\begin{tabularx}{\linewidth}{@{}Yr@{}}
-\toprule
-\textbf{Indicador} & \textbf{Valor}\\\midrule
-mAP@0.5 de YOLOv11n (265 imágenes de prueba) & 0.78\\
-F1 en grietas / baches & 0.85 / 0.74\\
-Inferencia en Raspberry Pi 5 & 163.84 ms (6.10 FPS)\\
-Nube LiDAR procesada (reconstrucción) & 7123 puntos en 0.40 s\\
-Volumen estimado del bache evaluado & 1348.73 cm\textsuperscript{3}\\
-Intervención manual en la pista de prueba & ninguna\\
-\bottomrule
-\end{tabularx}
-\par\vspace{2pt}
-{\footnotesize El modelo se entrenó con 7244 imágenes. Los 186 falsos negativos de baches son el principal modo de fallo, pues impiden activar el LiDAR.
-La comparación del volumen con una medición física de referencia está pendiente.}
+\blk{Resumen}
+Rover de bajo costo, construido con componentes comerciales, que detecta grietas y baches, reconstruye en 3D los baches detectados y
+navega siguiendo una línea amarilla. Se organiza en tres nodos:
+\begin{itemize}
+  \item \textbf{Raspberry Pi 5}: YOLOv11n y activación selectiva del LiDAR D500 para estimar el volumen del bache.
+  \item \textbf{Raspberry Pi 4B}: segmentación de la línea y ángulo de corrección a unos 20~Hz.
+  \item \textbf{ESP32}: control PI de dos motores, dos servos de dirección y telemetría por WSS.
+\end{itemize}
 \end{minipage}\hfill
-\begin{minipage}[t]{0.42\linewidth}
+\figbox{0.44}{img/rover-render.png}{Plataforma del rover: cámaras, LiDAR D500, tracción y dirección.}
+
+\gap
+\figbox{0.493}{img/software-architecture.png}{Arquitectura de software distribuida en tres nodos.}\hfill
+\figbox{0.467}{img/pcb-design.png}{PCB de integración electrónica (diseño y placa ensamblada).}
+
+\gap
+\begin{minipage}[t]{0.585\linewidth}
 \vspace{0pt}
-\centering
-\includegraphics[width=\linewidth]{img/rover-render.png}
-\captionof{figure}{Plataforma: cámaras, LiDAR D500, tracción JGA25-370 y dirección con dos servos MG996R.}
-\vspace{4pt}
-\includegraphics[width=\linewidth]{img/software-architecture.png}
-\captionof{figure}{Arquitectura de software distribuida.}
-\vspace{4pt}
-\includegraphics[width=\linewidth]{img/pcb-design.png}
-\captionof{figure}{PCB de integración electrónica.}
-\vspace{4pt}
+\blk{Formulación técnica}
+\small
+\begin{tabularx}{\linewidth}{|>{\bfseries\raggedright\arraybackslash}p{2.1cm}|Y|}
+\hline
+\rowcolor{navy!8}Modelo & Expresión\\\hline
+Velocidad de rueda & $\displaystyle\omega[k]=\frac{600\,n_\mathrm{enc}[k]}{1050}\ \mathrm{RPM}$\\\hline
+Control PI (100~ms) & $\begin{array}{@{}l@{}}I[k]=\operatorname{sat}_{[0,255]}\!\big(I[k-1]+K_i\,e[k]\,T_s\big)\\[2pt]u[k]=\operatorname{sat}_{[0,255]}\!\big(K_p\,e[k]+I[k]\big)\end{array}$\newline
+{\footnotesize $K_p=1.8$, $K_i=3.2$, $T_s=0.1$~s, \emph{anti-windup}}\\\hline
+Filtro de dirección & $\theta_f[k]=(1-\alpha)\,\theta_f[k-1]+\alpha\,\theta[k]$\newline
+{\footnotesize $\alpha=0.25$; banda muerta de $1^\circ$; servos de $60^\circ$ a $120^\circ$}\\\hline
+Volumen del bache & $\displaystyle V=\sum_{i,j} d_{ij}\,\Delta A_{ij}$\newline
+{\footnotesize $d_{ij}$ respecto al plano de referencia estimado por RANSAC}\\\hline
+\end{tabularx}
+\par\vspace{2pt}{\footnotesize Si el enlace UART permanece inactivo más de 200~ms, la referencia de velocidad pasa a cero.}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.385\linewidth}
+\vspace{0pt}
+\blk{Resultados}
+\small
+\begin{tabularx}{\linewidth}{|Y|r|}
+\hline
+\rowcolor{navy!8}Indicador & Valor\\\hline
+mAP@0.5 (YOLOv11n) & 0.78\\\hline
+F1 grietas / baches & 0.85 / 0.74\\\hline
+Inferencia en RPi\,5 & 163.84 ms\\\hline
+Nube LiDAR & 7123 pts en 0.40 s\\\hline
+Volumen del bache & 1348.73 cm\textsuperscript{3}\\\hline
+Entrenamiento / prueba & 7244 / 265 imágenes\\\hline
+\end{tabularx}
+\par\vspace{2pt}{\footnotesize Los 186 falsos negativos de baches son el principal modo de fallo, pues impiden activar el LiDAR. Falta comparar el volumen con una medición física.}
+\par\vspace{6pt}
 \includegraphics[width=\linewidth]{img/lidar-depth-map.png}
-\captionof{figure}{Mapa de profundidad LiDAR del bache evaluado (área afectada: 0.0111~m\textsuperscript{2}).}
+\captionof{figure}{Mapa de profundidad LiDAR del bache evaluado.}
 \end{minipage}
 
-\vfill
+\gap
 \contrib{Coordiné la integración técnica del sistema distribuido, definiendo las interfaces entre el ESP32, las Raspberry Pi 4B/5, los sensores y los actuadores
 (UART y WSS con mensajes JSON). Implementé la plataforma web de monitoreo y control sobre FastAPI: control de movimiento, joystick virtual,
 estado del sistema, detecciones en tiempo real, registro geolocalizado con imagen y mapas interactivos.
@@ -188,65 +213,62 @@ Paper presentado en IEEE INTERCON 2026; proyecto seleccionado para la final del 
 %  PROYECTO 2 — CUBESAT
 % =====================================================================
 \projecthead{2}{CubeSat 1U: monitoreo ambiental y telemetría LoRa}
-  {Equipo Arquitectos Galácticos, Competencia Nacional de Pequeños Satélites (INRAS-PUCP, VRI-PUCP, CONIDA)}{2024}
+  {Equipo Arquitectos Galácticos, Competencia Nacional de Pequeños Satélites}{2024}
+\vspace{4pt}
 
-\begin{minipage}[t]{0.555\linewidth}
+\begin{minipage}[t]{0.52\linewidth}
 \vspace{0pt}
-\sect{Resumen}
-Satélite de formato 1U, elevado por un dron a 100~m y liberado en caída libre. Un ESP32 adquiere temperatura, presión, humedad,
-aceleración, velocidad angular, campo magnético, tensión y corriente, y posición GPS (21 variables). Los datos se empaquetan en JSON
-y se transmiten por LoRa (SX1278, 433~MHz) a una estación terrena con interfaz gráfica en tiempo real. Durante el descenso, dos servos SG90 liberan el paracaídas.
-Fue uno de los 17 equipos seleccionados para la fase final presencial.
+\blk{Resumen}
+Satélite de formato 1U, elevado por un dron a 100~m y liberado en caída libre. El sistema se organiza en tres funciones:
+\begin{itemize}
+  \item \textbf{Adquisición}: un ESP32 lee 21 variables de seis sensores (ambiente, inercia, campo magnético, energía y GPS).
+  \item \textbf{Telemetría}: los datos viajan en JSON por LoRa (SX1278, 433~MHz) hasta una estación terrena con interfaz gráfica.
+  \item \textbf{Recuperación}: durante el descenso, dos servos SG90 liberan el paracaídas.
+\end{itemize} Fue uno de los 17 equipos seleccionados para la fase final presencial.
+\end{minipage}\hfill
+\figbox{0.44}{img/cs_GWN2etC.png}{Fase final de la Competencia Nacional de Pequeños Satélites 2024.}
 
-\sect{Formulación técnica}
-La altitud relativa se calcula a partir de la presión del BME280 ($P$ en hPa) con la fórmula barométrica, referida a la altitud $h_0$ del punto de arranque:
-\begin{equation}
-  h = \frac{1-\left(P/1013.25\right)^{1/5.2559}}{2.25577\times10^{-5}} - h_0 \quad[\mathrm{m}]
-\end{equation}
-El despliegue usa histéresis para evitar disparos por ruido: el sistema se arma al superar 85~m y despliega al descender por debajo de 80~m.
-\begin{align}
-  \text{armado}&\leftarrow \text{armado}\lor(h>85)\\
-  \text{despliegue}&=\text{armado}\land(h<80)
-\end{align}
-El mensaje JSON de longitud $L$ se fragmenta en $N=\lceil L/50\rceil$ paquetes LoRa de hasta 50 caracteres, separados por 50~ms.
-El receptor los reensambla y extrae cada variable. El magnetómetro se corrige por eje con $m_c=s\odot(m-b)$,
-donde $b=(-276,\,269,\,-348)$ y $s=(1.08,\,1.11,\,0.86)$.
+\gap
+\figbox{0.449}{img/cs_Cmlhuhz.jpeg}{Validación en protoboard: bus I\textsuperscript{2}C compartido y GPS.}\hfill
+\figbox{0.255}{img/cs_Q54q2ht.png}{PCB del piso 2: ESP32, GPS, LoRa e IMU.}\hfill
+\figbox{0.255}{img/cs_EGLJfHs.png}{PCB del piso 3: BME280 y servos.}
 
-\sect{Componentes}
+\gap
+\begin{minipage}[t]{0.585\linewidth}
+\vspace{0pt}
+\blk{Formulación técnica}
 \small
-\begin{tabularx}{\linewidth}{@{}>{\bfseries}lYl@{}}
-\toprule
-Módulo & Función & Bus\\\midrule
-ESP32 DevKit V1 & Dos núcleos a 240~MHz, 520~KB de SRAM & ---\\
-BME280          & Presión, temperatura y humedad          & I\textsuperscript{2}C\\
-MPU6050         & Acelerómetro ($\pm16$~g) y giroscopio, 16 bits & I\textsuperscript{2}C\\
-QMC5883L        & Magnetómetro de 3 ejes ($\pm8$~G)       & I\textsuperscript{2}C\\
-INA219          & Tensión y corriente (0.8~mA, 4~mV)      & I\textsuperscript{2}C\\
-NEO-6M          & GPS de 50 canales                       & UART\\
-SX1278 (Ra-02)  & LoRa, $+20$~dBm, sensibilidad $-148$~dBm & SPI\\
-\bottomrule
+\begin{tabularx}{\linewidth}{|>{\bfseries\raggedright\arraybackslash}p{2.1cm}|Y|}
+\hline
+\rowcolor{navy!8}Modelo & Expresión\\\hline
+Altitud relativa & $\displaystyle h=\frac{1-\left(P/1013.25\right)^{1/5.2559}}{2.25577\times10^{-5}}-h_0\ \ [\mathrm{m}]$\newline
+{\footnotesize $P$ del BME280 en hPa; $h_0$ es la altitud de arranque}\\\hline
+Despliegue con histéresis & $\begin{array}{@{}l@{}}\text{armado}\leftarrow\text{armado}\lor(h>85)\\[2pt]\text{despliegue}=\text{armado}\land(h<80)\end{array}$\newline
+{\footnotesize Se arma sobre 85~m y despliega bajo 80~m}\\\hline
+Paquetización LoRa & $N=\lceil L/50\rceil$ paquetes\newline
+{\footnotesize $L$: longitud del JSON; 50 caracteres por paquete, 50~ms entre paquetes}\\\hline
+Calibración magnética & $m_c=s\odot(m-b)$\newline
+{\footnotesize $b=(-276,269,-348)$, $s=(1.08,1.11,0.86)$}\\\hline
 \end{tabularx}
 \end{minipage}\hfill
-\begin{minipage}[t]{0.42\linewidth}
+\begin{minipage}[t]{0.385\linewidth}
 \vspace{0pt}
-\centering
-\includegraphics[width=\linewidth]{img/cs_GWN2etC.png}
-\captionof{figure}{Fase final de la competencia (CNPS 2024).}
-\vspace{4pt}
-\includegraphics[width=\linewidth]{img/cs_Cmlhuhz.jpeg}
-\captionof{figure}{Validación en protoboard: bus I\textsuperscript{2}C compartido y GPS.}
-\vspace{4pt}
-\begin{minipage}[t]{0.485\linewidth}\centering
-\includegraphics[width=\linewidth]{img/cs_Q54q2ht.png}
-\captionof{figure}{PCB del piso 2.}
-\end{minipage}\hfill
-\begin{minipage}[t]{0.485\linewidth}\centering
-\includegraphics[width=\linewidth]{img/cs_EGLJfHs.png}
-\captionof{figure}{PCB del piso 3.}
-\end{minipage}
+\blk{Componentes}
+\small
+\begin{tabularx}{\linewidth}{|>{\bfseries}l|Y|l|}
+\hline
+\rowcolor{navy!8}Módulo & Medición & Bus\\\hline
+ESP32 & MCU 240~MHz & ---\\\hline
+BME280 & P, T, HR & I\textsuperscript{2}C\\\hline
+MPU6050 & Acel., giro & I\textsuperscript{2}C\\\hline
+QMC5883L & Campo mag. & I\textsuperscript{2}C\\\hline
+INA219 & V, I & I\textsuperscript{2}C\\\hline
+NEO-6M & GPS & UART\\\hline
+SX1278 & LoRa & SPI\\\hline
+\end{tabularx}
 \end{minipage}
 
-\vfill
+\gap
 \contrib{Elaboré la matriz morfológica, el diagrama de flujo y los criterios de selección de componentes (precio, disponibilidad y viabilidad técnica);
 evalué y coticé sensores, módulos de comunicación y microcontroladores. Desarrollé el firmware en C++ para ESP32 (adquisición multisensor y transmisión LoRa)
 y diseñé los esquemáticos y las PCB en EasyEDA respetando las dimensiones del CubeSat. Para una siguiente iteración se recomienda alimentar con baterías Li-Ion de 3.7~V y mejorar el mecanismo de despliegue.}
@@ -257,80 +279,73 @@ y diseñé los esquemáticos y las PCB en EasyEDA respetando las dimensiones del
 % =====================================================================
 \projecthead{3}{ESP32-S3 Arpeggiator: instrumento musical digital autónomo}
   {Diseño Electrónico 2 (1IEE17), PUCP (asesor: H.~Pratt)}{2024-2}
+\vspace{4pt}
 
-\begin{minipage}[t]{0.555\linewidth}
+\begin{minipage}[t]{0.48\linewidth}
 \vspace{0pt}
-\sect{Resumen}
-Instrumento independiente basado en un ESP32-S3. El usuario selecciona cualquier combinación de notas en un teclado de una octava (C4--C5, 13 notas)
-y el equipo las reproduce como arpegio ascendente, descendente o aleatorio, con onda senoidal, cuadrada o triangular y velocidad y tono ajustables.
-El audio se transmite por I\textsuperscript{2}S (16 bits, 44.1~kHz) a un DAC PCM5102 y a un amplificador clase D TPA3116D2; 13 LED WS2812B indican las notas activas.
-El trabajo incluye PCB de doble capa y gabinete de MDF cortado con láser.
+\blk{Resumen}
+Instrumento independiente basado en un ESP32-S3. El usuario elige notas en un teclado de una octava (C4--C5, 13 notas) y el equipo las reproduce como arpegio
+ascendente, descendente o aleatorio, con onda senoidal, cuadrada o triangular, y velocidad y tono ajustables. El audio sale por I\textsuperscript{2}S
+(16 bits, 44.1~kHz) hacia un DAC PCM5102 y un amplificador clase D. Trece LED WS2812B indican las notas activas. Incluye PCB de doble capa y gabinete de MDF cortado con láser.
+\end{minipage}\hfill
+\figbox{0.48}{img/arp_final-prototype.jpg}{Prototipo final (gabinete de MDF de 5.5~mm).}
 
-\sect{Formulación técnica}
-\vspace{-2pt}
-\centering
+\gap
+\begin{center}
 \begin{tikzpicture}[
-  blk/.style={draw=navy,rounded corners=1pt,minimum height=0.6cm,inner sep=2.5pt,font=\fontsize{6.5}{7}\selectfont,align=center},
-  arr/.style={-{Stealth[length=3pt]},draw=navy}]
+  blk/.style={draw=navy,rounded corners=1pt,minimum height=0.75cm,minimum width=2.1cm,inner sep=3pt,font=\footnotesize,align=center},
+  arr/.style={-{Stealth[length=4pt]},draw=navy}]
   \node[blk] (a) {Teclado\\13 notas};
-  \node[blk,right=0.3cm of a] (b) {Lista\\ordenada};
-  \node[blk,right=0.3cm of b] (c) {Tabla de\\onda (256)};
-  \node[blk,right=0.3cm of c] (d) {Filtro\\IIR};
-  \node[blk,right=0.3cm of d] (e) {I\textsuperscript{2}S\\DAC};
-  \node[blk,right=0.3cm of e] (f) {Amplif.\\altavoz};
+  \node[blk,right=0.45cm of a] (b) {Lista\\ordenada};
+  \node[blk,right=0.45cm of b] (c) {Tabla de\\onda (256)};
+  \node[blk,right=0.45cm of c] (d) {Filtro\\IIR};
+  \node[blk,right=0.45cm of d] (e) {I\textsuperscript{2}S\\DAC};
+  \node[blk,right=0.45cm of e] (f) {Amplificador\\y altavoz};
   \foreach \s/\t in {a/b,b/c,c/d,d/e,e/f}{\draw[arr] (\s) -- (\t);}
 \end{tikzpicture}
-\par\vspace{2pt}\raggedright
-La frecuencia de cada nota se desplaza con un factor de tono $p\in[-0.5,0.5]$ (potenciómetro, ADC de 12 bits), y la duración del ciclo se reparte entre las notas activas:
-\begin{equation}
-  f_\mathrm{aj}=f_0\cdot2^{\,p},\qquad
-  T_\mathrm{nota}=\frac{T_\mathrm{ciclo}}{N_\mathrm{activas}}
-\end{equation}
-Cada forma de onda se almacena en una tabla de 256 muestras ($x[m]=32767\sin(2\pi m/256)$ en la senoidal). Con $f_s=44.1$~kHz, el número de muestras por periodo y el índice de lectura son:
-\begin{equation}
-  N_p=\left\lfloor \frac{f_s}{f_\mathrm{aj}}\right\rfloor,\qquad
-  i[n]=\left\lfloor\frac{(n \bmod N_p)\cdot 256}{N_p}\right\rfloor
-\end{equation}
-La señal pasa por un filtro de primer orden, con estado persistente entre bloques de 64 muestras y coeficiente $a\in[0,1]$:
-\begin{equation}
-  y[n]=y[n-1]+a\,\big(x[n]-y[n-1]\big)
-\end{equation}
+\captionof{figure}{Cadena de señal del instrumento.}
+\end{center}
 
-\sect{Interfaz de hardware}
-\small
-\begin{tabularx}{\linewidth}{@{}>{\bfseries}lYl@{}}
-\toprule
-Subsistema & Implementación & GPIO\\\midrule
-Audio I\textsuperscript{2}S & BCLK, LRCLK y DATA hacia el PCM5102 & 4, 5, 18\\
-Notas (C4--C5) & 13 pulsadores con alternancia y LED por nota & 8, 12--17, 19--21, 35--37\\
-Controles & Velocidad y tono (ADC); modo y onda (botones) & 3, 10, 40, 39\\
-LEDs & Cadena de 13 WS2812B & 38\\
-\bottomrule
-\end{tabularx}
-\par\vspace{2pt}
-{\footnotesize Limitaciones documentadas: reproducción bloqueante y \texttt{delay()} como antirrebote. Mejoras previstas: máquina de estados con \texttt{millis()},
-audio por DMA o tarea FreeRTOS, síntesis con acumulador de fase y envolvente ADSR.}
-\end{minipage}\hfill
-\begin{minipage}[t]{0.42\linewidth}
+\gap
+\figbox{0.188}{img/arp_fabricated-pcb.jpg}{PCB de doble capa.}\hfill
+\figbox{0.171}{img/arp_dac-audio-test.jpg}{Prueba del DAC.}\hfill
+\figbox{0.263}{img/arp_enclosure-cad.png}{Diseño del gabinete.}\hfill
+\figbox{0.333}{img/arp_hardware-schematic.png}{Esquemático.}
+
+\gap
+\begin{minipage}[t]{0.585\linewidth}
 \vspace{0pt}
-\centering
-\includegraphics[width=\linewidth]{img/arp_final-prototype.jpg}
-\captionof{figure}{Prototipo final: gabinete de MDF de 5.5~mm (aprox.\ 25$\times$30$\times$15~cm).}
-\vspace{4pt}
-\begin{minipage}[t]{0.485\linewidth}\centering
-\includegraphics[width=\linewidth,height=3.9cm,keepaspectratio]{img/arp_fabricated-pcb.jpg}
-\captionof{figure}{PCB de doble capa.}
+\blk{Formulación técnica}
+\small
+\begin{tabularx}{\linewidth}{|>{\bfseries\raggedright\arraybackslash}p{2.1cm}|Y|}
+\hline
+\rowcolor{navy!8}Modelo & Expresión\\\hline
+Afinación & $f_\mathrm{aj}=f_0\cdot2^{\,p}$\newline
+{\footnotesize $p\in[-0.5,0.5]$ desde un potenciómetro (ADC de 12 bits)}\\\hline
+Duración de nota & $T_\mathrm{nota}=T_\mathrm{ciclo}/N_\mathrm{activas}$\\\hline
+Oscilador por tabla & $\displaystyle N_p=\left\lfloor\frac{f_s}{f_\mathrm{aj}}\right\rfloor,\quad i[n]=\left\lfloor\frac{(n\bmod N_p)\cdot256}{N_p}\right\rfloor$\newline
+{\footnotesize $f_s=44.1$~kHz; tabla de 256 muestras; bloques de 64}\\\hline
+Filtro de suavizado & $y[n]=y[n-1]+a\,\big(x[n]-y[n-1]\big)$\newline
+{\footnotesize Primer orden, $a\in[0,1]$, estado persistente}\\\hline
+\end{tabularx}
 \end{minipage}\hfill
-\begin{minipage}[t]{0.485\linewidth}\centering
-\includegraphics[width=\linewidth,height=3.9cm,keepaspectratio]{img/arp_dac-audio-test.jpg}
-\captionof{figure}{Prueba de DAC y amplificador.}
-\end{minipage}
-\vspace{4pt}
-\includegraphics[width=\linewidth]{img/arp_hardware-schematic.png}
-\captionof{figure}{Esquemático con el ESP32-S3 y los conectores.}
+\begin{minipage}[t]{0.385\linewidth}
+\vspace{0pt}
+\blk{Interfaz de hardware}
+\small
+\begin{tabularx}{\linewidth}{|>{\bfseries}l|Y|}
+\hline
+\rowcolor{navy!8}Subsistema & GPIO\\\hline
+I\textsuperscript{2}S (BCLK, LRCLK, DATA) & 4, 5, 18\\\hline
+Notas C4--C5 & 8, 12--17, 19--21, 35--37\\\hline
+Velocidad, tono & 3, 10\\\hline
+Modo, onda & 40, 39\\\hline
+LEDs WS2812B & 38\\\hline
+\end{tabularx}
+\par\vspace{2pt}{\footnotesize Limitaciones documentadas: reproducción bloqueante y \texttt{delay()} como antirrebote. Mejoras previstas: máquina de estados con \texttt{millis()}, audio por DMA y envolvente ADSR.}
 \end{minipage}
 
-\vfill
+\gap
 \contrib{Integrante del equipo de cuatro estudiantes (M.~Bruschi, R.~Yupanqui, E.~Torres, J.~López). El desarrollo recorrió más de quince iteraciones:
 prueba del DAC con una senoidal de 400~Hz, prototipo con PWM, migración a I\textsuperscript{2}S, corrección del ruido intermitente mediante el rediseño de la generación de muestras,
 PCB a medida y gabinete. El repositorio incluye revisión de código y documentación del firmware.}
