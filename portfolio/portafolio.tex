@@ -24,6 +24,10 @@
 \definecolor{rulegray}{RGB}{140,140,140}
 
 \pagestyle{empty}
+% Sin división de palabras: la palabra completa pasa a la siguiente línea
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\emergencystretch=3em
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{4pt}
 \captionsetup{font={footnotesize},labelfont=bf,skip=2pt,justification=centering}
@@ -334,7 +338,7 @@ Potenciómetros de velocidad y tono & 3, 10\\\hline
 Botones de modo y forma de onda & 40, 39\\\hline
 LEDs WS2812B & 38\\\hline
 \end{tabularx}
-\par\vspace{2pt}{\raggedright\footnotesize Mejoras identificadas en la revisión de código: Leer los controles sin detener el audio (temporización con \texttt{millis()}), generar el audio por DMA y añadir una envolvente ADSR.}
+\par\vspace{2pt}{\raggedright\footnotesize Mejoras identificadas en la revisión de código: Leer los controles sin detener el audio (temporización con \texttt{millis()}), generar el audio por DMA y añadir una envolvente ADSR.\par}
 \end{minipage}
 
 \gap
