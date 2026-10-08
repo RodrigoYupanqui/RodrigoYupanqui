@@ -123,7 +123,7 @@ Automatización industrial & PLC Allen-Bradley (Ladder, Studio 5000), PLC Festo,
 \hline
 DIACSA & Practicante de Ingeniería Electrónica & feb.\ 2026 -- presente & \bul Apoyo el diseño, la validación y la documentación de un perfilómetro LiDAR + STM32 que mide secciones transversales de socavones mineros.\newline\bul Diseñé PCB en EasyEDA y desarrollé un pipeline en Python para los datos LiDAR (polar binning, filtrado adaptativo e interpolación).\\
 \hline
-Departamento Académico de Ciencias, PUCP & Jefe de práctica & mar.\ 2026 -- presente & \bul Dicto sesiones del curso Procesamiento Aleatorio Discreto: probabilidad, procesos estocásticos y sus aplicaciones en procesamiento de señales.\newline\bul Guío a los estudiantes en análisis de datos y simulación con MATLAB, IBM SPSS Statistics y Python.\\
+Departamento Académico de Ciencias, PUCP & Jefe de práctica & mar.\ 2026 -- presente & \bul Dicto sesiones del curso Procesamiento Aleatorio Discreto: Probabilidad, procesos estocásticos y sus aplicaciones en procesamiento de señales.\newline\bul Guío a los estudiantes en análisis de datos y simulación con MATLAB, IBM SPSS Statistics y Python.\\
 \hline
 IEEE Computer Society PUCP & Director de Proyectos (voluntariado) & feb.\ 2025 -- dic.\ 2025 & \bul Lideré el desarrollo del sitio web de la Asociación de Ciencias de la Computación PUCP, desde la planificación hasta la implementación.\newline\bul Moderé charlas y sesiones técnicas en la CS Week 2025.\newline\bul Representé al capítulo en eventos institucionales.\\
 \hline
@@ -135,7 +135,7 @@ IEEE Computer Society PUCP & Director de Proyectos (voluntariado) & feb.\ 2025 -
 % =====================================================================
 %  PROYECTO 1 — CRACKSCAN
 % =====================================================================
-\projecthead{1}{CrackScan: rover autónomo de inspección de pavimentos}
+\projecthead{1}{CrackScan: Rover autónomo de inspección de pavimentos}
   {Proyecto Electrónico 1, PUCP (asesor: S.\,E.~Romero)}{2025-1}
 \vspace{4pt}
 
@@ -145,16 +145,16 @@ IEEE Computer Society PUCP & Director de Proyectos (voluntariado) & feb.\ 2025 -
 Rover de bajo costo, construido con componentes comerciales, que detecta grietas y baches, reconstruye en 3D los baches detectados y
 navega siguiendo una línea amarilla. Se organiza en tres nodos:
 \begin{itemize}
-  \item \textbf{Raspberry Pi 5}: detecta grietas y baches con YOLOv11n y, solo ante un bache, activa el LiDAR D500 para medir su volumen.
-  \item \textbf{Raspberry Pi 4B}: detecta la línea amarilla y envía al ESP32 un ángulo de corrección a unos 20~Hz.
-  \item \textbf{ESP32}: regula la velocidad de los dos motores con un control PI, mueve los servos de dirección y envía telemetría por WebSocket seguro.
+  \item \textbf{Raspberry Pi 5}: Detecta grietas y baches con YOLOv11n y, solo ante un bache, activa el LiDAR D500 para medir su volumen.
+  \item \textbf{Raspberry Pi 4B}: Detecta la línea amarilla y envía al ESP32 un ángulo de corrección a unos 20~Hz.
+  \item \textbf{ESP32}: Regula la velocidad de los dos motores con un control PI, mueve los servos de dirección y envía telemetría por WebSocket seguro.
 \end{itemize}
 \end{minipage}\hfill
-\figbox{0.44}{img/rover-render.png}{Modelo 3D del rover: cámaras, LiDAR D500, motores de tracción y servos de dirección.}
+\figbox{0.44}{img/rover-render.png}{Modelo 3D del rover: Cámaras, LiDAR D500, motores de tracción y servos de dirección.}
 
 \gap
-\figbox{0.514}{img/navigation-results.png}{Navegación visual en tramos recto y curvo: imagen original, línea detectada y corrección aplicada.}\hfill
-\figbox{0.446}{img/pcb-design.png}{PCB principal del rover: diseño y placa ensamblada.}
+\figbox{0.514}{img/navigation-results.png}{Navegación visual en tramos recto y curvo: Imagen original, línea detectada y corrección aplicada.}\hfill
+\figbox{0.446}{img/pcb-design.png}{PCB principal del rover: Diseño y placa ensamblada.}
 
 \gap
 \begin{minipage}[t]{0.585\linewidth}
@@ -172,7 +172,7 @@ Filtro de dirección & $\theta_f[k]=(1-\alpha)\,\theta_f[k-1]+\alpha\,\theta[k]$
 Volumen del bache & $\displaystyle V=\sum_{i,j} d_{ij}\,\Delta A_{ij}$\newline
 {\footnotesize $d_{ij}$ respecto al plano de referencia estimado por RANSAC}\\\hline
 \end{tabularx}
-\par\vspace{2pt}{\footnotesize Seguridad: si la Raspberry Pi 4B deja de enviar datos por más de 200~ms, el ESP32 detiene los motores.}
+\par\vspace{2pt}{\footnotesize Seguridad: Si la Raspberry Pi 4B deja de enviar datos por más de 200~ms, el ESP32 detiene los motores.}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.385\linewidth}
 \vspace{0pt}
@@ -196,7 +196,7 @@ Imágenes de entrenamiento / prueba & 7244 / 265\\\hline
 
 \gap
 \contrib{Coordiné la integración técnica del sistema distribuido, definiendo las interfaces entre el ESP32, las Raspberry Pi 4B/5, los sensores y los actuadores
-(UART y WSS con mensajes JSON). Implementé la plataforma web de monitoreo y control sobre FastAPI: control de movimiento, joystick virtual,
+(UART y WSS con mensajes JSON). Implementé la plataforma web de monitoreo y control sobre FastAPI: Control de movimiento, joystick virtual,
 estado del sistema, detecciones en tiempo real, registro geolocalizado con imagen y mapas interactivos.
 Paper presentado en IEEE INTERCON 2026; proyecto seleccionado para la final del Student Poster Competition del 12th ICACIT Symposium 2026.}
 \newpage
@@ -204,7 +204,7 @@ Paper presentado en IEEE INTERCON 2026; proyecto seleccionado para la final del 
 % =====================================================================
 %  PROYECTO 2 — CUBESAT
 % =====================================================================
-\projecthead{2}{CubeSat 1U: monitoreo ambiental y telemetría LoRa}
+\projecthead{2}{CubeSat 1U: Monitoreo ambiental y telemetría LoRa}
   {Equipo Arquitectos Galácticos, Competencia Nacional de Pequeños Satélites}{2024}
 \vspace{4pt}
 
@@ -213,9 +213,9 @@ Paper presentado en IEEE INTERCON 2026; proyecto seleccionado para la final del 
 \blk{Resumen}
 Satélite de formato 1U, elevado por un dron a 100~m y liberado en caída libre. El sistema se organiza en tres funciones:
 \begin{itemize}
-  \item \textbf{Adquisición}: un ESP32 lee 21 variables de seis sensores (ambientales, inerciales, magnéticas, de consumo eléctrico y de posición GPS).
-  \item \textbf{Telemetría}: los datos viajan en JSON por LoRa (SX1278, 433~MHz) hasta una estación terrena con interfaz gráfica.
-  \item \textbf{Recuperación}: durante el descenso, dos servos SG90 liberan el paracaídas.
+  \item \textbf{Adquisición}: Un ESP32 lee 21 variables de seis sensores (ambientales, inerciales, magnéticas, de consumo eléctrico y de posición GPS).
+  \item \textbf{Telemetría}: Los datos viajan en JSON por LoRa (SX1278, 433~MHz) hasta una estación terrena con interfaz gráfica.
+  \item \textbf{Recuperación}: Durante el descenso, dos servos SG90 liberan el paracaídas.
 \end{itemize} Fue uno de los 17 equipos seleccionados para la fase final presencial.
 \end{minipage}\hfill
 \figbox{0.44}{img/cs_GWN2etC.png}{Fase final de la Competencia Nacional de Pequeños Satélites 2024.}
@@ -238,9 +238,9 @@ Altitud relativa & $\displaystyle h=\frac{1-\left(P/1013.25\right)^{1/5.2559}}{2
 Despliegue con histéresis & $\begin{array}{@{}l@{}}\text{armado}\leftarrow\text{armado}\lor(h>85)\\[2pt]\text{despliegue}=\text{armado}\land(h<80)\end{array}$\newline
 {\footnotesize El sistema se activa al superar 85~m y abre el paracaídas al bajar de 80~m}\\\hline
 Paquetización LoRa & $N=\lceil L/50\rceil$ paquetes\newline
-{\footnotesize $L$: longitud del JSON; 50 caracteres por paquete, 50~ms entre paquetes}\\\hline
+{\footnotesize $L$: Longitud del JSON; 50 caracteres por paquete, 50~ms entre paquetes}\\\hline
 Calibración magnética & $m_c=s\odot(m-b)$\newline
-{\footnotesize $b$: desviación por eje $(-276,269,-348)$; $s$: escala por eje $(1.08,1.11,0.86)$}\\\hline
+{\footnotesize $b$: Desviación por eje $(-276,269,-348)$; $s$: Escala por eje $(1.08,1.11,0.86)$}\\\hline
 \end{tabularx}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.385\linewidth}
@@ -269,7 +269,7 @@ y diseñé los esquemáticos y las PCB en EasyEDA respetando las dimensiones del
 % =====================================================================
 %  PROYECTO 3 — ARPEGGIATOR
 % =====================================================================
-\projecthead{3}{ESP32-S3 Arpeggiator: instrumento musical digital autónomo}
+\projecthead{3}{ESP32-S3 Arpeggiator: Instrumento musical digital autónomo}
   {Diseño Electrónico 2 (1IEE17), PUCP (asesor: H.~Pratt)}{2024-2}
 \vspace{4pt}
 
@@ -334,7 +334,7 @@ Potenciómetros de velocidad y tono & 3, 10\\\hline
 Botones de modo y forma de onda & 40, 39\\\hline
 LEDs WS2812B & 38\\\hline
 \end{tabularx}
-\par\vspace{2pt}{\raggedright\footnotesize Mejoras identificadas en la revisión de código: leer los controles sin detener el audio (temporización con \texttt{millis()}), generar el audio por DMA y añadir una envolvente ADSR.}
+\par\vspace{2pt}{\raggedright\footnotesize Mejoras identificadas en la revisión de código: Leer los controles sin detener el audio (temporización con \texttt{millis()}), generar el audio por DMA y añadir una envolvente ADSR.}
 \end{minipage}
 
 \gap
