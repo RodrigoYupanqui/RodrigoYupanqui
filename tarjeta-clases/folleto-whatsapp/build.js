@@ -1,6 +1,7 @@
 // Folleto de una sola cara para enviar por WhatsApp: imagen vertical 1080 x 1920 px.
 // Todas las medidas están en px de pantalla; 1 px = 1/96 pulg. y las fuentes se convierten px -> pt (x 0,75).
 const pptxgen = require('pptxgenjs');
+const fs = require('fs');
 
 const P = v => v / 96, PT = v => v * 0.75;
 const COND = 'Barlow Condensed', BODY = 'Barlow';
@@ -64,6 +65,8 @@ text('Secundaria y pre', 100, 1128, 460, 62, { fontFace: COND, bold: true, fontS
   dot(x, y + 17, 14, DARK, DARK, 'viñeta ' + t);
   text(t, x + 30, y, 215, 44, { fontFace: COND, bold: true, fontSize: 36, color: DARK, valign: 'middle' });
 }));
+dot(100, 1202 + 3 * 46 + 17, 14, DARK, DARK, 'viñeta Razonamiento Matemático');
+text('Razonamiento Matemático', 130, 1202 + 3 * 46, 440, 44, { fontFace: COND, bold: true, fontSize: 36, color: DARK, valign: 'middle' });
 round(608, 1106, 400, 298, DARK, 28, 'cursos · bloque universidad');
 text('Universidad', 636, 1128, 340, 62, { fontFace: COND, bold: true, fontSize: 52, color: ACCENT, valign: 'middle' });
 ['Cálculo', 'Física', 'Química', 'Cursos de Ingeniería'].forEach((t, r) => {
@@ -80,12 +83,12 @@ text('Facilidades de pago · Máx. 4 por grupo', 350, 1504, 660, 40, { bold: tru
 
 // ---------- 6. Llamado a la acción
 rect(0, 1560, 1080, 360, DARK, 'contacto · fondo');
-text([run('Responda este mensaje y coordinamos el', { breakLine: true }), run('diagnóstico de su hijo(a).')], 72, 1588, 936, 90, { bold: true, fontSize: 38, color: WHITE, lineSpacingMultiple: 1.05, objectName: 'contacto · llamado' });
-round(72, 1700, 936, 100, ACCENT, 50, 'contacto · botón WhatsApp');
-text([run('WhatsApp  ', { fontSize: 34, bold: true }), run('+51 961 956 660', { fontFace: COND, fontSize: 68, bold: true })], 72, 1700, 936, 100,
-  { color: DARK, align: 'center', valign: 'middle', objectName: 'contacto · WhatsApp' });
-s.addShape(pres.shapes.LINE, { ...box(72, 1814, 936, 0), line: { color: MUTED, width: 1, dashType: 'sysDot' }, objectName: 'contacto · línea' });
-text([run('Profesores de Ingeniería de la', { breakLine: true }), run('Pontificia Universidad Católica del Perú', { bold: true })], 72, 1830, 936, 68, { fontSize: 28, color: CHALK, objectName: 'contacto · respaldo' });
+text([run('Responda este mensaje y coordinamos el', { breakLine: true }), run('diagnóstico de su hijo(a).')], 72, 1580, 936, 90, { bold: true, fontSize: 38, color: WHITE, lineSpacingMultiple: 1.05, objectName: 'contacto · llamado' });
+round(72, 1702, 936, 100, ACCENT, 50, 'contacto · botón WhatsApp');
+s.addImage({ ...box(88, 1714, 76, 76), data: 'image/png;base64,' + fs.readFileSync('whatsapp-icono.png').toString('base64'), altText: 'Logo de WhatsApp', objectName: 'contacto · logo WhatsApp' });
+text('+51 961 956 660', 72, 1702, 936, 100, { fontFace: COND, bold: true, fontSize: 76, color: DARK, align: 'center', valign: 'middle', objectName: 'contacto · WhatsApp' });
+s.addShape(pres.shapes.LINE, { ...box(72, 1826, 936, 0), line: { color: MUTED, width: 1, dashType: 'sysDot' }, objectName: 'contacto · línea' });
+text([run('Profesores de Ingeniería de la', { breakLine: true }), run('Pontificia Universidad Católica del Perú', { bold: true })], 72, 1838, 936, 66, { fontSize: 28, color: CHALK, objectName: 'contacto · respaldo' });
 
 s.addNotes('Imagen de 1080 x 1920 px para enviar por WhatsApp.');
-pres.writeFile({ fileName: `folleto-whatsapp-${NOMBRE}.pptx` });
+pres.writeFile({ fileName: 'folleto-whatsapp.pptx' });
